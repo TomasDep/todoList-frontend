@@ -12,7 +12,6 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  public textDanger: any = ""
   public registerForm: FormGroup = this.formBuilder.group({
     name: ['', Validators.required],
     username: ['', Validators.required],
@@ -26,6 +25,9 @@ export class RegisterComponent {
     private authService: AuthService
   ) { }
 
+  /**
+   * Metodo para el registro de usuarios
+   */
   register(): void {
     this.authService.register(this.registerForm.value)
         .subscribe({
@@ -34,6 +36,10 @@ export class RegisterComponent {
         });
   }
 
+  
+  /**
+   * Metodo para verificar si hay campos no validos
+   */
   invalidFields(field: string): boolean {
     if (this.registerForm.get(field)?.invalid) {
       return true;
@@ -42,6 +48,9 @@ export class RegisterComponent {
     }
   }
 
+  /**
+   * Validacion para verificar si las contraseñas son iguales
+   */
   validationPasswords(password: string, passwordConfirm: string): ValidatorFn {
     return (controls: AbstractControl) => {
       const passControl = controls.get(password);

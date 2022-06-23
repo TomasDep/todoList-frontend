@@ -16,6 +16,9 @@ import { AuthService } from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Guardia para Verificar si el usuario esta autentificado
+ */
 export class AuthGuard implements CanActivate, CanLoad {
   constructor(
     private authService: AuthService, 

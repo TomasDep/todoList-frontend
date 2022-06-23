@@ -18,18 +18,37 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  /**
+   * Metodo para obtener el token
+   */
   get token(): string {
     return sessionStorage.getItem('token') || '';
   }
 
+  /**
+   * Metodo para obtener los headers
+   */
   get headers(): object {
     return { headers: { 'x-token': this.token } };
   }
 
+  /**
+   * Metodo para obtener al usuario autentificado
+   */
+  get userAuth(): User {
+    return this.user;
+  }
+
+  /**
+   * Metodo para agregar el token al Session Storage
+   */
   setStorage(token: string): void {
     sessionStorage.setItem('token', token);
   }
   
+  /**
+   * Metodo para consumir el endpoint que corresponde al inicio de session
+   */
   login(formData: ILoginForm): Observable<any> {
     return this.http.post(`${ this.baseUrl }/login`, formData)
                 .pipe(
@@ -39,6 +58,9 @@ export class AuthService {
                 );
   }
 
+  /**
+   * Metodo para consumir el endpoint que corresponde al registro de usuarios
+   */
   register(formData: IRegisterForm): Observable<any> {
     return this.http.post(`${ this.baseUrl }/users`, formData)
               .pipe(
@@ -49,6 +71,9 @@ export class AuthService {
               );
   }
 
+  /**
+   * Metodo para consumir el endpoint que corresponde a la verificacion y renovacion del token
+   */
   validateToken(): Observable<boolean> {
     return this.http.get(`${ this.baseUrl }/renew`, this.headers)
                     .pipe(
@@ -62,6 +87,9 @@ export class AuthService {
                     );
   }
 
+  /**
+   * Metodo para cerrar sesion
+   */
   logout(): void {
     sessionStorage.clear();
     this.router.navigateByUrl('/login');

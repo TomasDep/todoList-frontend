@@ -1,3 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.title-1 {
+  text-align: center;
+  padding:8px;
+}
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.mt-2 {
+  margin-top: 2rem !important;
+}
+
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.mb-1 {
+  margin-bottom: 1rem !important; 
+}
+
 .mb-2 {
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem !important; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #455a64;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400; 
+}
+
+h1 {
+  line-height: 40px;
+  font-size: 36px; 
+}
+
+h2 {
+  line-height: 36px;
+  font-size: 24px; 
+}
+
+h3 {
+  line-height: 30px;
+  font-size: 21px; 
+}
+
+h4 {
+  line-height: 22px;
+  font-size: 18px; 
+}
+
+h5 {
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: 400; 
+}
+
+h6 {
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: 400; 
+}
+
+.background {
+  height: 40em;
+  background-size: cover; 
+  width: auto;
+  background-image: url('assets/images/background/login-register.jpg');
+  background-position: 50% 50%;
 }

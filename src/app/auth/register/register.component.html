@@ -1,34 +1,36 @@
-<div>
-  <p-card header="Registro">
-    <form autocomplete="off" [formGroup]="registerForm" (submit)="register()">
-      <span class="p-float-label mb-2">
-        <input id="float-input" type="text" pInputText formControlName="name"> 
-        <label for="float-input">Nombre</label>
-      </span>
-      <span class="p-float-label mb-2">
-        <input id="float-input" type="text" pInputText formControlName="username"> 
-        <label for="float-input">Nombre de usuario</label>
-      </span>
-      <span class="p-float-label mb-2">
-        <input id="float-input" type="password" pInputText formControlName="password"> 
-        <label for="float-input">Contraseña</label>
-      </span>
-      <span class="p-float-label mb-2">
-        <input id="float-input" type="password" pInputText formControlName="confirmPassword"> 
-        <label for="float-input">Confirmar Contraseña</label>
-      </span>
-      <button pButton 
-              pRipple 
-              type="submit"
-              class="p-button-raised p-button-rounded" 
-              label="Registrarse"
-              [disabled]="registerForm.invalid">
-      </button>
-    </form>
-    <div>
-      <p *ngIf="invalidFields('name')" [ngStyle]="{color:'var(--red-500)'}">El nombre es requerido</p>
-      <p *ngIf="invalidFields('username')" [ngStyle]="{color:'var(--red-500)'}">El nombre de usuario es requerido</p>
-    </div>
-    <p>Ya tienes una cuenta? <a routerLink="/login"><b>Ingresa aqui &rarr;</b></a></p>
-  </p-card>
-</div>
+<section class="background">
+  <div class="card-register mt-5">
+    <p-card header="Registro">
+      <form autocomplete="off" class="mb-2" [formGroup]="registerForm" (submit)="register()">
+        <span class="p-float-label mb-2">
+          <input id="float-input" type="text" pInputText formControlName="name"> 
+          <label for="float-input">Nombre</label>
+        </span>
+        <span class="p-float-label mb-2">
+          <input id="float-input" type="text" pInputText formControlName="username"> 
+          <label for="float-input">Nombre de usuario</label>
+        </span>
+        <span class="p-float-label mb-2">
+          <input id="float-input" type="password" pInputText formControlName="password"> 
+          <label for="float-input">Contraseña</label>
+        </span>
+        <span class="p-float-label mb-2">
+          <input id="float-input" type="password" pInputText formControlName="confirmPassword"> 
+          <label for="float-input">Confirmar Contraseña</label>
+        </span>
+        <button pButton 
+                pRipple 
+                type="submit"
+                class="p-button-raised p-button-rounded" 
+                label="Registrarse"
+                [disabled]="registerForm.invalid">
+        </button>
+      </form>
+      <div>
+        <p *ngIf="invalidFields('name')" [ngStyle]="{color:'var(--red-500)'}" class="mb-1">El nombre es requerido</p>
+        <p *ngIf="invalidFields('username')" [ngStyle]="{color:'var(--red-500)'}" class="mb-1">El nombre de usuario es requerido</p>
+      </div>
+      <p>Ya tienes una cuenta? <a routerLink="/login"><b>Ingresa aqui &rarr;</b></a></p>
+    </p-card>
+  </div>
+</section>

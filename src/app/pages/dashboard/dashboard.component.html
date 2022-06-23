@@ -1,13 +1,70 @@
-<h1>To Do List</h1>
-
-<div>
+<div class="container">
+  <h1 class="title-1">To Do List</h1>
   <button pButton 
           pRipple 
           type="button"
-          class="p-button-help p-button-rounded" 
-          label="Nueva Tarea">
+          class="p-button-help p-button-rounded mb-1" 
+          label="Nueva Tarea"
+          (click)="displayResponsive=true">
+  </button>
+  <div *ngFor="let task of tasks">
+    <p-fieldset legend="{{ task.name }}" 
+                [toggleable]="true" 
+                [collapsed]="true">
+      <h3 [ngStyle]="{color:'var(--blue-700)'}" class="mb-1" *ngIf="task.state === true">Tarea Terminada</h3>
+      <button pButton 
+              pRipple 
+              type="button" 
+              icon="pi pi-check" 
+              label="Terminar Tarea?"
+              class="p-button-rounded p-button-outlined mb-2"
+              *ngIf="task.state === false"
+              (click)="taskResolve(task)">
+            </button>
+      <h3 *ngIf="task.description">Descripcion</h3>
+      <p>{{ task.description }}</p>
+    </p-fieldset>
+    <br>
+  </div>
+  <p-dialog header="Ingresar una nueva tarea"
+            [modal]="true"
+            [(visible)]="displayResponsive" 
+            [breakpoints]="{'960px': '75vw'}" 
+            [style]="{width: '50vw'}"
+            [draggable]="false" 
+            [resizable]="false">
+            
+    <form autocomplete="off" [formGroup]="taskForm" (submit)="createTask()">
+      <span class="p-float-label mt-2 mb-2">
+        <input id="float-input" type="text" pInputText formControlName="name">
+        <label for="float-input">Nombre tarea</label>
+      </span>
+      <span class="p-float-label mb-2">
+        <textarea id="float-input" type="textarea" cols="50" pInputText formControlName="description"></textarea>
+        <label for="float-input">Descripcion</label>
+      </span>
+      <button pButton 
+              pRipple 
+              type="submit"
+              class="p-button-raised p-button-rounded" 
+              label="Ingresar Tarea"
+              [disabled]="taskForm.invalid">
+      </button>
+    </form>
+  </p-dialog>
+  <div *ngIf="this.tasks.length > 0" class="mt-2">
+    <button pButton
+            pRipple
+            (click)="changePage(-5)" 
+            class="p-button-secondary p-button-rounded">
+            Anterior
     </button>
-  <p-fieldset *ngFor="let task of tasks" legend="{{ task.name }}" [toggleable]="true">
-    {{ task.description }}
-  </p-fieldset>
+    &nbsp;
+    <button pButton
+            pRipple
+            (click)="changePage(5)" 
+            class="p-button-secondary p-button-rounded">
+            Siguiente
+    </button>
+  </div>
 </div>

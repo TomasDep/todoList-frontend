@@ -1,3 +1,10 @@
+/**
+ * Modelo Usuario
+ * @attibute uid: string
+ * @attibute name: string
+ * @attibute username: string
+ * @attibute password: string
+ */
 export class User {
   public uid: string;
   public name: string;

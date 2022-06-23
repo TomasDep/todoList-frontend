@@ -8,7 +8,9 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent implements OnInit {
   title = 'Todo List';
-  
+  /**
+   * Se injecta PrimeNGConfig para habilitar las animaciones
+   */
   constructor(private primeConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {

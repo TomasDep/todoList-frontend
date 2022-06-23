@@ -29,6 +29,9 @@ export class LoginComponent implements OnInit {
     this.primeConfig.ripple = true;
   }
 
+  /**
+   * Metodo para el inicio de sesion
+   */
   login(): void {
     this.authService.login(this.loginForm.value)
         .subscribe({

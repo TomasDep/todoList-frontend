@@ -7,6 +7,9 @@ import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
 import { FieldsetModule } from 'primeng/fieldset';
 import { DialogModule } from 'primeng/dialog';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+
 
 const modules = [
   CardModule,
@@ -15,7 +18,9 @@ const modules = [
   RippleModule,
   SidebarModule,
   FieldsetModule,
-  DialogModule
+  DialogModule,
+  PanelMenuModule,
+  InputTextareaModule
 ]
 
 @NgModule({

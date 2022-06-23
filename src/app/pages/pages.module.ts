@@ -6,6 +6,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PrimengModule } from '../primeng-modules/primeng.module';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule,
     RouterModule,
-    PrimengModule
+    PrimengModule,
+    ReactiveFormsModule
   ],
   exports: [
     PagesComponent,

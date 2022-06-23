@@ -1,10 +1,18 @@
-<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
-  <h4>To Do List</h4>
+<p-sidebar [(visible)]="visibleSidebar" [baseZIndex]="10000">
+  <h4 class="mb-2">Menu</h4>
+  <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
+  <div class="mt-2">
+    <p-button type="button" 
+              tabindex="0"
+              (click)="logout()" 
+              label="Cerrar Sesion">
+    </p-button>
+  </div>
 </p-sidebar>
 
 <p-button type="button" 
           tabindex="0"
-          (click)="visibleSidebar1 = true" 
+          (click)="visibleSidebar = true" 
           icon="pi pi-arrow-right"
-          class="sidebar-button"
-></p-button>
+          class="sidebar-button">
+</p-button>
