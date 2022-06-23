@@ -48,6 +48,7 @@ export class DashboardComponent implements OnInit {
       next: (resp: any) => {
         this.displayResponsive = false;
         Swal.fire('Success', resp.message, 'success');
+        this.taskForm.reset();
         this.loadTasks();
       },
       error: (e: any) => Swal.fire('Error', e.error.message, 'error')
