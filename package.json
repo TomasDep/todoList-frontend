@@ -18,7 +18,11 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "primeflex": "^3.2.1",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.4.1",
     "rxjs": "~7.4.0",
+    "sweetalert2": "^11.4.18",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

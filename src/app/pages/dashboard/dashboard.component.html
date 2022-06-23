@@ -1,0 +1,13 @@
+<h1>To Do List</h1>
+
+<div>
+  <button pButton 
+          pRipple 
+          type="button"
+          class="p-button-help p-button-rounded" 
+          label="Nueva Tarea">
+    </button>
+  <p-fieldset *ngFor="let task of tasks" legend="{{ task.name }}" [toggleable]="true">
+    {{ task.description }}
+  </p-fieldset>
+</div>

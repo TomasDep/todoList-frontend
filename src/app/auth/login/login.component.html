@@ -1,0 +1,22 @@
+<div>
+  <p-card header="Inicio de Sesion">
+    <form autocomplete="off" [formGroup]="loginForm" (submit)="login()">
+      <span class="p-float-label mb-2">
+        <input id="float-input" type="text" pInputText formControlName="username"> 
+        <label for="float-input">Nombre de usuario</label>
+      </span>
+      <span class="p-float-label mb-2">
+        <input id="float-input" type="password" pInputText formControlName="password"> 
+        <label for="float-input">Contraseña</label>
+      </span>
+      <button pButton 
+              pRipple 
+              type="submit"
+              class="p-button-raised p-button-rounded" 
+              label="Iniciar Sesion"
+              [disabled]="loginForm.invalid">
+      </button>
+    </form>
+    <p>No tienes una cuenta? <a routerLink="/register"><b>Registrate &rarr;</b></a></p>
+  </p-card>
+</div>
